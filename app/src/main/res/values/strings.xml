@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PICar</string>
+    <string name="startText">Android Client For Pi Car</string>
+    <string name="todo">TODO</string>
+    <string name="IPText">192.168.137.118</string>
+    <string name="PortText">8000</string>
+    <string name="连接">连接</string>
+    <string name="上">↑</string>
+    <string name="左">←</string>
+    <string name="右">→</string>
+    <string name="下">↓</string>
+</resources>

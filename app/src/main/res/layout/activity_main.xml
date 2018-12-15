@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
+        android:text="Address of Raspberry PI"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/IP_Text"
+            style="@android:style/Widget.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType=""
+            android:text="@string/IPText"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="15dp"
+            android:layout_height="34dp"
+            android:text=":"
+            android:paddingLeft="5dp"
+            android:textSize="18sp"
+            android:typeface="serif" />
+
+        <EditText
+            android:id="@+id/Port_Text"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:text="@string/PortText"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="81dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/连接" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp">
+
+        <Button
+            android:id="@+id/btnUP"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/上"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnL"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="140dp"
+            android:layout_toStartOf="@+id/btnUP"
+            android:text="@string/左"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/btnDN"
+            android:layout_toEndOf="@id/btnL"
+            android:layout_margin="5dp"
+            app:srcCompat="@mipmap/new_icon" />
+        <Button
+            android:id="@+id/btnR"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_alignBottom="@+id/btnL"
+            android:layout_toEndOf="@+id/btnUP"
+            android:text="@string/右"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/btnDN"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/btnUP"
+            android:layout_alignStart="@+id/btnUP"
+
+            android:text="@string/下"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/PWML"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="左轮PWM:70"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <SeekBar
+            android:id="@+id/seekBarL"
+            style="@android:style/Widget.Material.SeekBar.Discrete"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PWML"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="5dp"
+            android:max="99"
+            android:progress="70"
+            tools:targetApi="n" />
+
+        <TextView
+            android:id="@+id/PWMR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/PWML"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="右轮PWM:70"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <SeekBar
+            android:id="@+id/seekBarR"
+            style="@android:style/Widget.Material.SeekBar.Discrete"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seekBarL"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="7dp"
+            android:max="99"
+            android:progress="70"
+            tools:targetApi="n" />
+
+
+    </RelativeLayout>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:switchMinWidth="60dp"
+        android:text="自动巡线模式"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorText"
+        android:textStyle="bold" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="P："
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/PText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="0.65"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="初始速度："
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:layout_marginStart="40dp"/>
+
+            <EditText
+                android:id="@+id/InitVText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="50"
+                android:gravity="center"/>
+
+        </TableRow>
+        <TableRow
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="I："
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/IText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="减速系数："
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:layout_marginStart="40dp"/>
+
+            <EditText
+                android:id="@+id/KVText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="0.24"
+                android:gravity="center"/>
+
+        </TableRow>
+        <TableRow
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="D："
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/DText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="1.6"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="转弯差速："
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:layout_marginStart="40dp"/>
+
+            <EditText
+                android:id="@+id/DVText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:gravity="center"/>
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
